@@ -37,9 +37,9 @@ Chương trình có các chức năng sau:
 2. Cấu trúc dữ liệu từng thành phần
    a. Quản Lý đầu sách:
      Đoạn mã bạn đưa ra là một ví dụ về cách triển khai cấu trúc dữ liệu và các thao tác trong hệ thống quản lý sách, bao gồm:
-      * A. Cấu trúc dữ liệu
+      # A. Cấu trúc dữ liệu
       
-      #### Struct `DauSach`
+      ## Struct `DauSach`
       - **Mô tả**: Định nghĩa một cuốn sách với các thông tin như ISBN, tên sách, số trang, tác giả, nhà xuất bản, thể loại.
       - **Thuộc tính**:
         - `ISBN`: Mã số sách.
@@ -52,15 +52,15 @@ Chương trình có các chức năng sau:
         - `soluotmuon`: Số lượt mượn sách.
         - `soluong`: Số lượng sách có sẵn của đầu sách.
       
-      #### Struct `DS_DauSach`
+      ## Struct `DS_DauSach`
       - **Mô tả**: Lưu trữ danh sách các cuốn sách.
       - **Thuộc tính**:
         - `n`: Số lượng cuốn sách trong danh sách.
         - `nodes`: Mảng các con trỏ đến các đối tượng `DauSach`.
       
-      * B. Các hàm và thao tác
+      # B. Các hàm và thao tác
       
-      #### Hàm `InsertDauSach`
+      ## Hàm `InsertDauSach`
       - **Mô tả**: Chèn một đầu sách vào vị trí `position` trong danh sách `DS_DauSach`.
       - **Tham số**:
         - `DSDS`: Tham chiếu đến danh sách `DS_DauSach`.
@@ -70,7 +70,7 @@ Chương trình có các chức năng sau:
         - Di chuyển các phần tử sau vị trí `position` sang phải.
         - Chèn `dausach` vào vị trí `position`.
       
-      #### Hàm `AddDauSach`
+      ## Hàm `AddDauSach`
       - **Mô tả**: Thêm một đầu sách vào danh sách `DS_DauSach` theo thứ tự sắp xếp theo thể loại và tên sách.
       - **Tham số**:
         - `DSDS`: Tham chiếu đến danh sách `DS_DauSach`.
@@ -78,21 +78,21 @@ Chương trình có các chức năng sau:
       - **Công việc**:
         - Duyệt qua danh sách để tìm vị trí thích hợp để chèn `dausach` sao cho danh sách vẫn được sắp xếp.
       
-      #### Hàm `ExistsDauSach`
+      ## Hàm `ExistsDauSach`
       - **Mô tả**: Kiểm tra xem một cuốn sách có tồn tại trong danh sách `DS_DauSach` hay không.
       - **Tham số**:
         - `DSDS`: Tham chiếu đến danh sách `DS_DauSach`.
         - `ISBN`: Mã số sách cần kiểm tra.
       - **Trả về**: Vị trí của cuốn sách trong danh sách nếu tồn tại, `-1` nếu không tồn tại.
       
-      #### Các hàm khác
+      ## Các hàm khác
       - `UpdateDauSach`: Cập nhật thông tin của một cuốn sách trong danh sách.
       - `GetDauSach`, `GetIndexDauSach`: Tìm kiếm một cuốn sách trong danh sách theo `ISBN`.
       - `IsPrefix`: Kiểm tra xem một chuỗi có phải là tiền tố của chuỗi khác không.
       - `GetListNodes`: Lọc danh sách các cuốn sách có tên bắt đầu bằng `strFind`.
       - `TopSach`: Cấu trúc để thống kê và sắp xếp sách theo số lượt mượn.
       
-      * C. Giải thuật sử dụng
+      # C. Giải thuật sử dụng
       
       - **Sắp xếp**: Sử dụng giải thuật QuickSort để sắp xếp danh sách các sách theo số lượt mượn.
       - **Tìm kiếm**: Sử dụng tìm kiếm tuần tự để tìm vị trí của cuốn sách theo `ISBN`.
