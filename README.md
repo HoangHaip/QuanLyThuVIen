@@ -31,13 +31,13 @@ Chương trình có các chức năng sau:
 # Quá trình phát triển:
 1. Thiết lặp giao diện:
    Để tránh việc mất thời gian chỉnh sửa vị trí trục tọa độ tung, hoành, chúng tôi xem xét việc chọn QT Designer hoặc Visual Studio để thiết kế giao diện và sau đó chuyển sang Dev C++.
-   a. Tạo file từ Visual Studio để thiết kế các nút từ kho ToolBox.
-   b. sau khi lưu file nó sẽ sản sinh mã nguồn của các thiết kế tương ứng và lấy các tọa độ cần thiết như trục tung, trục hoành, weight và height của các button nếu có.
-   c. Bên cạnh đó cần cài MingGW làm trình biên dịch cho DevC++ rồi chỉnh sửa sao cho phù hợp
+   * a. Tạo file từ Visual Studio để thiết kế các nút từ kho ToolBox.
+   * b. sau khi lưu file nó sẽ sản sinh mã nguồn của các thiết kế tương ứng và lấy các tọa độ cần thiết như trục tung, trục hoành, weight và height của các button nếu có.
+   * c. Bên cạnh đó cần cài MingGW làm trình biên dịch cho DevC++ rồi chỉnh sửa sao cho phù hợp
 2. Cấu trúc dữ liệu từng thành phần
    a. Quản Lý đầu sách:
      Đoạn mã bạn đưa ra là một ví dụ về cách triển khai cấu trúc dữ liệu và các thao tác trong hệ thống quản lý sách, bao gồm:
-      ### 1. Cấu trúc dữ liệu
+      * A. Cấu trúc dữ liệu
       
       #### Struct `DauSach`
       - **Mô tả**: Định nghĩa một cuốn sách với các thông tin như ISBN, tên sách, số trang, tác giả, nhà xuất bản, thể loại.
@@ -58,7 +58,7 @@ Chương trình có các chức năng sau:
         - `n`: Số lượng cuốn sách trong danh sách.
         - `nodes`: Mảng các con trỏ đến các đối tượng `DauSach`.
       
-      ### 2. Các hàm và thao tác
+      * B. Các hàm và thao tác
       
       #### Hàm `InsertDauSach`
       - **Mô tả**: Chèn một đầu sách vào vị trí `position` trong danh sách `DS_DauSach`.
@@ -92,7 +92,7 @@ Chương trình có các chức năng sau:
       - `GetListNodes`: Lọc danh sách các cuốn sách có tên bắt đầu bằng `strFind`.
       - `TopSach`: Cấu trúc để thống kê và sắp xếp sách theo số lượt mượn.
       
-      ### 3. Giải thuật sử dụng
+      * C. Giải thuật sử dụng
       
       - **Sắp xếp**: Sử dụng giải thuật QuickSort để sắp xếp danh sách các sách theo số lượt mượn.
       - **Tìm kiếm**: Sử dụng tìm kiếm tuần tự để tìm vị trí của cuốn sách theo `ISBN`.
