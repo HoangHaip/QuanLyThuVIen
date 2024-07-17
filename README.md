@@ -29,6 +29,12 @@ Chương trình có các chức năng sau:
 **Lưu ý:** Đồ án hiển thị trên màn hình Full HD (1920x1080), cỡ chữ 100%.
 
 # Một số hình ảnh
-![alt text](https://github.com/HoangHaip/QuanLyThuVien/pictures/dausach.png "Đầu sách")
-![alt text](https://github.com/HoangHaip/QuanLyThuVien/blob/master/pictures/sach.png "Sách")
-![alt text](https://github.com/VinhVIP/Quan_Ly_Thu_Vien/blob/master/pictures/sach.png "Sách")
+![alt text](https://github.com/HoangHaip/QuanLyThuVien/blob/main/pictures/dausach.png "Đầu sách")
+![alt text](https://github.com/HoangHaip/QuanLyThuVien/blob/main/pictures/sach.png "Sách")
+![alt text](https://github.com/HoangHaip/QuanLyThuVien/blob/main/pictures/docgia.png "Độc giả")
+![alt text](https://github.com/HoangHaip/QuanLyThuVien/blob/main/pictures/ms.png "Mượn Sách")
+![alt text](https://github.com/HoangHaip/QuanLyThuVien/blob/main/pictures/top.png "Top 10 Độc giả best seller")
+![alt text](https://github.com/HoangHaip/QuanLyThuVien/blob/main/pictures/info.png "Thông tin")
+
+
+
