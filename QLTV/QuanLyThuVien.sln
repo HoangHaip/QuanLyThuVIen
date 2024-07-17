@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35103.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "QuanLyThuVien", "QuanLyThuVien.exe", "{5D432386-C6B7-46B3-BAC7-575E260CE19D}"
+	ProjectSection(DebuggerProjectSystem) = preProject
+		PortSupplier = 00000000-0000-0000-0000-000000000000
+		Executable = C:\Users\Hoang_Hai\OneDrive\Máy tính\Quan_Ly_Thu_Vien-master\QLTV\QuanLyThuVien.exe
+		RemoteMachine = LAPTOP-GGFD429F
+		StartingDirectory = C:\Users\Hoang_Hai\OneDrive\Máy tính\Quan_Ly_Thu_Vien-master\QLTV
+		Environment = Default
+		LaunchingEngine = 00000000-0000-0000-0000-000000000000
+		UseLegacyDebugEngines = No
+		LaunchSQLEngine = No
+		AttachLaunchAction = No
+		IORedirection = Auto
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D432386-C6B7-46B3-BAC7-575E260CE19D}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D72EE723-51C0-4FCB-9C7F-24DBE7F3A378}
+	EndGlobalSection
+EndGlobal
