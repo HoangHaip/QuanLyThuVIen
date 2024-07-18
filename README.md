@@ -197,7 +197,81 @@ Chương trình có các chức năng sau:
         2. Phân chia danh sách thành hai phần: phần nhỏ hơn và lớn hơn pivot.
         3. Gọi đệ quy `Partition` cho từng phần.
         4. Đổi chỗ các phần tử để đảm bảo danh sách được sắp xếp.
-
+   * c. Quản lý mượn trả:
+      1. Cấu trúc dữ liệu
+      
+      Struct `MuonTra`
+      - **Mô tả**: Định nghĩa thông tin mượn trả sách của một độc giả.
+      - **Thuộc tính**:
+        - `MASACH`: Mã sách.
+        - `ngaymuon`: Ngày mượn sách.
+        - `ngaytra`: Ngày trả sách.
+        - `trangthai`: Trạng thái mượn/trả (0: Đang mượn, 1: Đã trả, 2: Làm mất).
+      - **Phương thức khởi tạo**:
+        - `MuonTra()`: Khởi tạo mặc định.
+        - `MuonTra(char* ms, char* muon, char* tra, int tt)`: Khởi tạo với các thông tin cụ thể.
+      
+      Struct `NodeMuonTra`
+      - **Mô tả**: Nút của danh sách liên kết đôi lưu trữ thông tin mượn trả sách.
+      - **Thuộc tính**:
+        - `muontra`: Thông tin mượn trả sách.
+        - `prev`: Con trỏ đến nút trước đó.
+        - `next`: Con trỏ đến nút tiếp theo.
+      
+      Struct `DS_MuonTra`
+      - **Mô tả**: Lưu trữ danh sách các thông tin mượn trả sách của một độc giả.
+      - **Thuộc tính**:
+        - `First`: Con trỏ đến nút đầu tiên của danh sách.
+        - `Last`: Con trỏ đến nút cuối cùng của danh sách.
+        - `total`: Tổng số lượng sách đã mượn.
+        - `chuaTra`: Số lượng sách đang mượn hoặc làm mất.
+      
+      Giải thuật
+      
+      2. Tạo nút mới
+      **Hàm `CreateNewNode_MuonTra`**:
+      - **Mô tả**: Tạo một nút mới lưu trữ thông tin mượn trả sách.
+      - **Tham số**:
+        - `mt`: Thông tin mượn trả sách cần lưu trữ.
+      - **Trả về**: Con trỏ đến nút mới được tạo.
+     
+      3. Thêm vào đầu danh sách
+      **Hàm `InsertFirst_MuonTra`**:
+      - **Mô tả**: Thêm thông tin mượn trả sách vào đầu danh sách.
+      - **Tham số**:
+        - `DSMT`: Danh sách mượn trả sách.
+        - `mt`: Thông tin mượn trả sách cần thêm.
+      4. Thêm vào cuối danh sách
+      **Hàm `InsertLast_MuonTra`**:
+      - **Mô tả**: Thêm thông tin mượn trả sách vào cuối danh sách.
+      - **Tham số**:
+        - `DSMT`: Danh sách mượn trả sách.
+        - `mt`: Thông tin mượn trả sách cần thêm.
+      - **Công việc**:
+        1. Tạo nút mới với thông tin mượn trả.
+        2. Nếu danh sách rỗng, cập nhật cả `First` và `Last` trỏ đến nút mới.
+        3. Nếu không, thêm nút mới vào cuối danh sách và cập nhật con trỏ của `Last`.
+        4. Cập nhật thuộc tính `total` và `chuaTra` của danh sách.
+      5. Cập nhật thông tin mượn trả sách
+      **Hàm `Update_MuonTra`**:
+      - **Mô tả**: Cập nhật thông tin mượn trả sách khi sách được trả hoặc làm mất.
+      - **Tham số**:
+        - `DSMT`: Danh sách mượn trả sách.
+        - `mt`: Thông tin mượn trả sách cần cập nhật.
+      - **Công việc**:
+        1. Duyệt từ cuối danh sách lên đầu.
+        2. Tìm nút có `MASACH` khớp với `mt.MASACH` và `ngaytra` rỗng.
+        3. Cập nhật thông tin mượn trả của nút đó.
+        4. Nếu trạng thái mới là `1` (đã trả), giảm `chuaTra`.
+      6. Xóa toàn bộ danh sách
+      **Hàm `ClearList_MuonTra` và `DeleteAllMuonTra`**:
+      - **Mô tả**: Xóa toàn bộ danh sách mượn trả sách.
+      - **Tham số**:
+        - `DSMT`: Danh sách mượn trả sách cần xóa.
+      - **Công việc**:
+        1. Duyệt từ đầu danh sách và xóa từng nút.
+        2. Cập nhật con trỏ `First` và `Last` của danh sách.
+   
 # Một số hình ảnh
 ![alt text](https://github.com/HoangHaip/QuanLyThuVien/blob/main/pictures/dausach.png "Đầu sách")
 ![alt text](https://github.com/HoangHaip/QuanLyThuVien/blob/main/pictures/sach.png "Sách")
