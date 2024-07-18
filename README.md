@@ -37,6 +37,7 @@ Chương trình có các chức năng sau:
 2. Cấu trúc dữ liệu từng thành phần
    a. Quản Lý đầu sách:
      Đoạn mã bạn đưa ra là một ví dụ về cách triển khai cấu trúc dữ liệu và các thao tác trong hệ thống quản lý sách, bao gồm:
+   
       A. Cấu trúc dữ liệu
       
       Struct `DauSach`
@@ -97,6 +98,93 @@ Chương trình có các chức năng sau:
       - **Sắp xếp**: Sử dụng giải thuật QuickSort để sắp xếp danh sách các sách theo số lượt mượn.
       - **Tìm kiếm**: Sử dụng tìm kiếm tuần tự để tìm vị trí của cuốn sách theo `ISBN`.
       - **Chèn và xóa**: Đảm bảo các hoạt động chèn và xóa đối tượng `DauSach` trong danh sách `DS_DauSach` được thực hiện một cách hiệu quả và bảo toàn dữ liệu.
+   b. Quản Lý Độc Giả:
+
+      A. Cấu trúc dữ liệu:
+         Struct `DocGia`
+         - **Mô tả**: Định nghĩa một độc giả với các thông tin như mã thẻ, họ, tên, giới tính, trạng thái, và danh sách mượn/trả sách.
+         - **Thuộc tính**:
+           - `MATHE`: Mã thẻ độc giả.
+           - `ho`: Họ của độc giả.
+           - `ten`: Tên của độc giả.
+           - `phai`: Giới tính (0: Nam, 1: Nữ).
+           - `trangthai`: Trạng thái (0: Khóa, 1: Hoạt động).
+           - `mt`: Danh sách mượn/trả sách.
+
+         Struct `NodeDocGia`
+         - **Mô tả**: Nút của cây nhị phân tìm kiếm lưu trữ thông tin độc giả.
+         - **Thuộc tính**:
+           - `docgia`: Thông tin độc giả.
+           - `left`: Con trỏ đến nút con trái.
+           - `right`: Con trỏ đến nút con phải.
+
+         Struct `DS_DocGia`
+         - **Mô tả**: Lưu trữ danh sách các độc giả.
+         - **Thuộc tính**:
+           - `n`: Số lượng độc giả trong danh sách.
+           - `nodes`: Mảng các con trỏ đến các đối tượng `DocGia`.
+           - `soNgayQH`: Số ngày quá hạn.
+           - `mode`: Chế độ sắp xếp.
+
+         
+      B. Các giải thuật
+      * Giải thuật Insertion (Thêm độc giả)
+      **Hàm `InsertDocGia`**:
+      - **Mô tả**: Chèn một độc giả vào cây nhị phân tìm kiếm.
+      - **Tham số**:
+        - `node`: Tham chiếu đến nút trong cây nhị phân.
+        - `dg`: Thông tin độc giả cần chèn.
+      - **Công việc**:
+        1. Nếu `node` là NULL:
+           - Tạo một `NodeDocGia` mới và gán nó cho `node`.
+           - Khởi tạo các giá trị cho `node->docgia`, `node->left`, và `node->right`.
+        2. Nếu `dg.MATHE` nhỏ hơn `node->docgia.MATHE`:
+           - Gọi đệ quy hàm `InsertDocGia` với `node->left`.
+        3. Nếu `dg.MATHE` lớn hơn `node->docgia.MATHE`:
+           - Gọi đệ quy hàm `InsertDocGia` với `node->right`.
+
+      * Giải thuật tìm kiếm
+      **Hàm `SearchDocGia`**:
+      - **Mô tả**: Tìm kiếm độc giả trong cây nhị phân tìm kiếm theo mã thẻ.
+      - **Tham số**:
+        - `treeDG`: Tham chiếu đến cây nhị phân.
+        - `maDocGia`: Mã thẻ của độc giả cần tìm.
+      - **Trả về**: Con trỏ đến nút chứa thông tin độc giả nếu tìm thấy, NULL nếu không tìm thấy.
+
+      * Giải thuật xóa
+      **Hàm `RemoveDocGia`**:
+      - **Mô tả**: Xóa một độc giả khỏi cây nhị phân tìm kiếm theo mã thẻ.
+      - **Tham số**:
+        - `node`: Tham chiếu đến nút trong cây nhị phân.
+        - `maDocGia`: Mã thẻ của độc giả cần xóa.
+      - **Công việc**:
+        1. Nếu `node` là NULL, in ra thông báo không thể xóa.
+        2. Nếu `maDocGia` nhỏ hơn `node->docgia.MATHE`, gọi đệ quy `RemoveDocGia` với `node->left`.
+        3. Nếu `maDocGia` lớn hơn `node->docgia.MATHE`, gọi đệ quy `RemoveDocGia` với `node->right`.
+        4. Nếu `maDocGia` bằng `node->docgia.MATHE`, thực hiện các bước xóa nút và giải phóng bộ nhớ.
+
+
+      * Giải thuật duyệt cây (In-Order Traversal)
+      **Hàm `LNR`**:
+      - **Mô tả**: Duyệt cây nhị phân theo thứ tự In-Order.
+      - **Tham số**:
+        - `node`: Tham chiếu đến nút trong cây nhị phân.
+      - **Công việc**:
+        1. Nếu `node` không phải NULL, thực hiện:
+           - Gọi đệ quy `LNR` với `node->left`.
+           - Lưu thông tin của `node->docgia` vào danh sách.
+           - Gọi đệ quy `LNR` với `node->right`.
+
+      * Giải thuật sắp xếp (Quicksort)
+      **Hàm `Partition` và `Quicksort`**:
+      - **Mô tả**: Sắp xếp danh sách độc giả sử dụng giải thuật Quicksort.
+      - **Tham số**:
+        - `low`, `high`: Các chỉ số đầu và cuối của danh sách cần sắp xếp.
+      - **Công việc**:
+        1. Chọn một phần tử làm pivot.
+        2. Phân chia danh sách thành hai phần: phần nhỏ hơn và lớn hơn pivot.
+        3. Gọi đệ quy `Partition` cho từng phần.
+        4. Đổi chỗ các phần tử để đảm bảo danh sách được sắp xếp.
 
 # Một số hình ảnh
 ![alt text](https://github.com/HoangHaip/QuanLyThuVien/blob/main/pictures/dausach.png "Đầu sách")
