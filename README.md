@@ -101,7 +101,7 @@ Chương trình có các chức năng sau:
    b. Quản Lý Độc Giả:
 
       A. Cấu trúc dữ liệu:
-         Struct `DocGia`
+         Struct `DocGia`.
          .
          - **Mô tả**: Định nghĩa một độc giả với các thông tin như mã thẻ, họ, tên, giới tính, trạng thái, và danh sách mượn/trả sách.
          - **Thuộc tính**:
@@ -112,14 +112,16 @@ Chương trình có các chức năng sau:
            - `trangthai`: Trạng thái (0: Khóa, 1: Hoạt động).
            - `mt`: Danh sách mượn/trả sách.
          .
-         Struct `NodeDocGia`
+         .
+         Struct `NodeDocGia`.
          - **Mô tả**: Nút của cây nhị phân tìm kiếm lưu trữ thông tin độc giả.
          - **Thuộc tính**:
            - `docgia`: Thông tin độc giả.
            - `left`: Con trỏ đến nút con trái.
            - `right`: Con trỏ đến nút con phải.
          .
-         Struct `DS_DocGia`
+         .
+         Struct `DS_DocGia`.
          - **Mô tả**: Lưu trữ danh sách các độc giả.
          - **Thuộc tính**:
            - `n`: Số lượng độc giả trong danh sách.
@@ -130,6 +132,8 @@ Chương trình có các chức năng sau:
          
       B. Các giải thuật
       * Giải thuật Insertion (Thêm độc giả)
+
+        
       **Hàm `InsertDocGia`**:
       - **Mô tả**: Chèn một độc giả vào cây nhị phân tìm kiếm.
       - **Tham số**:
@@ -145,6 +149,8 @@ Chương trình có các chức năng sau:
            - Gọi đệ quy hàm `InsertDocGia` với `node->right`.
 
       * Giải thuật tìm kiếm
+
+        
       **Hàm `SearchDocGia`**:
       - **Mô tả**: Tìm kiếm độc giả trong cây nhị phân tìm kiếm theo mã thẻ.
       - **Tham số**:
@@ -152,7 +158,10 @@ Chương trình có các chức năng sau:
         - `maDocGia`: Mã thẻ của độc giả cần tìm.
       - **Trả về**: Con trỏ đến nút chứa thông tin độc giả nếu tìm thấy, NULL nếu không tìm thấy.
 
+
       * Giải thuật xóa
+  
+        
       **Hàm `RemoveDocGia`**:
       - **Mô tả**: Xóa một độc giả khỏi cây nhị phân tìm kiếm theo mã thẻ.
       - **Tham số**:
@@ -166,6 +175,8 @@ Chương trình có các chức năng sau:
 
 
       * Giải thuật duyệt cây (In-Order Traversal)
+  
+        
       **Hàm `LNR`**:
       - **Mô tả**: Duyệt cây nhị phân theo thứ tự In-Order.
       - **Tham số**:
@@ -177,6 +188,8 @@ Chương trình có các chức năng sau:
            - Gọi đệ quy `LNR` với `node->right`.
 
       * Giải thuật sắp xếp (Quicksort)
+  
+        
       **Hàm `Partition` và `Quicksort`**:
       - **Mô tả**: Sắp xếp danh sách độc giả sử dụng giải thuật Quicksort.
       - **Tham số**:
