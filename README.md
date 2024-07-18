@@ -104,6 +104,7 @@ Chương trình có các chức năng sau:
 ![alt text](https://github.com/HoangHaip/QuanLyThuVien/blob/main/pictures/docgia.png "Độc giả")
 ![alt text](https://github.com/HoangHaip/QuanLyThuVien/blob/main/pictures/ms.png "Mượn Sách")
 ![alt text](https://github.com/HoangHaip/QuanLyThuVien/blob/main/pictures/top.png "Top 10 Độc giả best seller")
+![alt text](https://github.com/HoangHaip/QuanLyThuVien/blob/main/pictures/trangchu.png "Trang Chủ")
 ![alt text](https://github.com/HoangHaip/QuanLyThuVien/blob/main/pictures/info.png "Thông tin")
 
 
