@@ -35,7 +35,7 @@ Chương trình có các chức năng sau:
    * b. sau khi lưu file nó sẽ sản sinh mã nguồn của các thiết kế tương ứng và lấy các tọa độ cần thiết như trục tung, trục hoành, weight và height của các button nếu có.
    * c. Bên cạnh đó cần cài MingGW làm trình biên dịch cho DevC++ rồi chỉnh sửa sao cho phù hợp
 2. Cấu trúc dữ liệu từng thành phần
-   a. Quản Lý đầu sách:
+   * a. Quản Lý đầu sách:
      Đoạn mã bạn đưa ra là một ví dụ về cách triển khai cấu trúc dữ liệu và các thao tác trong hệ thống quản lý sách, bao gồm:
    
       A. Cấu trúc dữ liệu
@@ -98,36 +98,34 @@ Chương trình có các chức năng sau:
       - **Sắp xếp**: Sử dụng giải thuật QuickSort để sắp xếp danh sách các sách theo số lượt mượn.
       - **Tìm kiếm**: Sử dụng tìm kiếm tuần tự để tìm vị trí của cuốn sách theo `ISBN`.
       - **Chèn và xóa**: Đảm bảo các hoạt động chèn và xóa đối tượng `DauSach` trong danh sách `DS_DauSach` được thực hiện một cách hiệu quả và bảo toàn dữ liệu.
-   b. Quản Lý Độc Giả:
+   * b. Quản Lý Độc Giả:
 
       A. Cấu trúc dữ liệu:
-         Struct `DocGia`.
-         .
-         - **Mô tả**: Định nghĩa một độc giả với các thông tin như mã thẻ, họ, tên, giới tính, trạng thái, và danh sách mượn/trả sách.
-         - **Thuộc tính**:
-           - `MATHE`: Mã thẻ độc giả.
-           - `ho`: Họ của độc giả.
-           - `ten`: Tên của độc giả.
-           - `phai`: Giới tính (0: Nam, 1: Nữ).
-           - `trangthai`: Trạng thái (0: Khóa, 1: Hoạt động).
-           - `mt`: Danh sách mượn/trả sách.
-         .
-         .
-         Struct `NodeDocGia`.
-         - **Mô tả**: Nút của cây nhị phân tìm kiếm lưu trữ thông tin độc giả.
-         - **Thuộc tính**:
-           - `docgia`: Thông tin độc giả.
-           - `left`: Con trỏ đến nút con trái.
-           - `right`: Con trỏ đến nút con phải.
-         .
-         .
-         Struct `DS_DocGia`.
-         - **Mô tả**: Lưu trữ danh sách các độc giả.
-         - **Thuộc tính**:
-           - `n`: Số lượng độc giả trong danh sách.
-           - `nodes`: Mảng các con trỏ đến các đối tượng `DocGia`.
-           - `soNgayQH`: Số ngày quá hạn.
-           - `mode`: Chế độ sắp xếp.
+      Struct `DocGia`.
+     
+      - **Mô tả**: Định nghĩa một độc giả với các thông tin như mã thẻ, họ, tên, giới tính, trạng thái, và danh sách mượn/trả sách.
+      - **Thuộc tính**:
+      - `MATHE`: Mã thẻ độc giả.
+      - `ho`: Họ của độc giả.
+      - `ten`: Tên của độc giả.
+      - `phai`: Giới tính (0: Nam, 1: Nữ).
+      - `trangthai`: Trạng thái (0: Khóa, 1: Hoạt động).
+      - `mt`: Danh sách mượn/trả sách.
+     
+      Struct `NodeDocGia`.
+      - **Mô tả**: Nút của cây nhị phân tìm kiếm lưu trữ thông tin độc giả.
+      - **Thuộc tính**:
+      - `docgia`: Thông tin độc giả.
+      - `left`: Con trỏ đến nút con trái.
+      - `right`: Con trỏ đến nút con phải.
+        
+      Struct `DS_DocGia`.
+      - **Mô tả**: Lưu trữ danh sách các độc giả.
+      - **Thuộc tính**:
+      - `n`: Số lượng độc giả trong danh sách.
+      - `nodes`: Mảng các con trỏ đến các đối tượng `DocGia`.
+      - `soNgayQH`: Số ngày quá hạn.
+      - `mode`: Chế độ sắp xếp.
 
          
       B. Các giải thuật
