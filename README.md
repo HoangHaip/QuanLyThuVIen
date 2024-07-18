@@ -102,6 +102,7 @@ Chương trình có các chức năng sau:
 
       A. Cấu trúc dữ liệu:
          Struct `DocGia`
+         .
          - **Mô tả**: Định nghĩa một độc giả với các thông tin như mã thẻ, họ, tên, giới tính, trạng thái, và danh sách mượn/trả sách.
          - **Thuộc tính**:
            - `MATHE`: Mã thẻ độc giả.
@@ -110,14 +111,14 @@ Chương trình có các chức năng sau:
            - `phai`: Giới tính (0: Nam, 1: Nữ).
            - `trangthai`: Trạng thái (0: Khóa, 1: Hoạt động).
            - `mt`: Danh sách mượn/trả sách.
-
+         .
          Struct `NodeDocGia`
          - **Mô tả**: Nút của cây nhị phân tìm kiếm lưu trữ thông tin độc giả.
          - **Thuộc tính**:
            - `docgia`: Thông tin độc giả.
            - `left`: Con trỏ đến nút con trái.
            - `right`: Con trỏ đến nút con phải.
-
+         .
          Struct `DS_DocGia`
          - **Mô tả**: Lưu trữ danh sách các độc giả.
          - **Thuộc tính**:
