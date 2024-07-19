@@ -1,6 +1,6 @@
 # CTDL & GT - Giảng Viên: Nguyễn Duy Diệu 
-## Phạm Hoàng Hải - 2302700162
-## Trần Ngọc Hương Quế - 2302700252
+## Phạm Hoàng Hải - 2302700162 - Class 1202
+## Trần Ngọc Hương Quế - 2302700252 - Class 1201
 
 Thư viện: Ta tổ chức các danh sách sau: 
 - `Đầu sách` : danh sách tuyến tính là 1 mảng con trỏ (ISBN , Tên sách, Số trang, Tác giả, năm xuất bản, thể loại, con trỏ dms): con trỏ sẽ trỏ đến các sách thuộc đầu sách tương ứng
