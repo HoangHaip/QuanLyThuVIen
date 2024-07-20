@@ -12,7 +12,7 @@ void RunDocGia(){
 	
 	btnSapXepTen.draw();
 	btnSapXepMaThe.draw();
-	edTimdocgia.draw();
+	//edTimdocgia.draw();
 	btnTatCaDocGia.isHover = true;
 	btnTatCaDocGia.isChoose = true;
 	btnDocGiaQuaHan.isChoose = false;

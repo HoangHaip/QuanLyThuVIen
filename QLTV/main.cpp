@@ -24,6 +24,7 @@ using namespace std;
 #include "docgia.h"
 #include "muontra.h"
 #include "thongtin.h"
+#include "thongke.h"
        
           
 bool isExit = false;
@@ -84,6 +85,7 @@ void DrawMenu(){
 	btnQLDocGia.draw();
 	btnQLSach.draw();
 	btnThongTin.draw();
+	btnThongKe.draw();
 	btnThoat.draw();
 } 
 
@@ -102,6 +104,8 @@ void Event(){
 		MuonTraEvent();
 	}else if(curMenu == btnThongTin.id){
 		ThongTinEvent();
+	}else if(curMenu == btnThongKe.id){
+		//ThongKeEvent();
 	}
 } 
 
@@ -286,6 +290,7 @@ void MenuEvent(){
 	ButtonEffect(btnQLDocGia);
 	ButtonEffect(btnQLSach);
 	ButtonEffect(btnThongTin);
+	ButtonEffect(btnThongKe);
 	ButtonEffect(btnThoat);	
 
 	//Menu Click Event
@@ -298,6 +303,8 @@ void MenuEvent(){
 			SetMenuSelect(btnQLSach.id);
 		}else if(btnThongTin.isMouseHover(mx, my)){
 			SetMenuSelect(btnThongTin.id);
+		}else if(btnThongKe.isMouseHover(mx,my)) {
+			SetMenuSelect(btnThongKe.id);
 		}else if(btnThoat.isMouseHover(mx, my)){
 			isExit = true;
 		}

@@ -692,6 +692,8 @@ void DauSachEvent(){
 			
 		}else if(btnThongTin.isMouseHover(mx, my)){
 			
+		}else if(btnThongKe.isMouseHover(mx,my)){
+			
 		}else if(btnThoat.isMouseHover(mx, my)){
 			
 		}

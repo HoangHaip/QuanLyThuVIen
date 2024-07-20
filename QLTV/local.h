@@ -77,7 +77,8 @@ Button btnQLDauSach(100, w/2-btnWid/2, btnY + btnSpace, btnWid, btnHei, "QUAN LY
 Button btnQLDocGia(101, w/2-btnWid/2, btnY + 2*btnSpace, btnWid, btnHei, "QUAN LY DOC GIA", 0);
 Button btnQLSach(102, w/2-btnWid/2, btnY + 3*btnSpace, btnWid, btnHei, "MUON TRA SACH", 0);
 Button btnThongTin(103, w/2-btnWid/2, btnY + 4*btnSpace, btnWid, btnHei, "THONG TIN", 0);
-Button btnThoat(104, w/2-btnWid/2, btnY + 5*btnSpace, btnWid, btnHei, "THOAT", 0);
+Button btnThongKe(107, w/2-btnWid/2, btnY+ 5*btnSpace, btnWid, btnHei, "THONG KE", 0);
+Button btnThoat(105, w/2-btnWid/2, btnY + 6*btnSpace, btnWid, btnHei, "THOAT", 0);
 
 
 // Button Dau Sach
@@ -187,6 +188,13 @@ Button btnLamMatSach(300, ((w+250)/2 + w)/2 - 100, 800, 200, 50, "LAM MAT SACH?"
 Button btnXacNhanLamMatSach(301, w/2+300, 800, 200, 50, "XAC NHAN", 0);
 Button btnHuyLamMatSach(302, w-15-300, 800, 200, 50, "HUY", 0);
 
+// Thong Ke
+// Muon Tra Sach
+// Button btnBackToMenu(230, 20, 50, 200, 70, "  < MENU", -1);
+Button btnThongKeSachThuVien(231, 20, 150, 200, 70, "  SACH THU VIEN", -1);
+Button btnThongKeSachMuon(232, 20, 250, 200, 70, "  SACH MUON", -1);
+Button btnTop(233, 20, 350, 200, 70, "  HOAT DONG MUON", -1);
+
 void ClearScreen();
 void DrawMenu();
 void ButtonEffect(Button &btn);
@@ -283,10 +291,12 @@ void DuyetDocGia(NodeDocGia* &nodeDG, TopSach &topsach);
 
 void RunThongTin();
 void ThongTinEvent();
-
+void SetMenuMuonTra();
 void MoveToNextEditText();
 void MoveToPrevEditText();
-
+void RunThongKe();
+void DrawBorderThongKe();
+void SetMenuMuonTraSelectss();
 void KbEvent(){
 	if(GetAsyncKeyState(VK_LEFT) || GetAsyncKeyState(VK_RIGHT)){
 		ClearStream();
@@ -411,7 +421,16 @@ void KbEvent(){
 			if(Edit == &edNhapNgayTraSach){
 				Scan(Edit, 10, DATE_TIME);
 			}
-		}
+	}
+//		}else if(curMenu == btnThongKe.id){
+//			if(Edit == &edThongKeSachThuVien){
+//				Scan(Edit, 18, SPACE_TEXT);
+//			}else if(Edit == &edThongKeSachDuocMuon){
+//				Scan(Edit, 10, ONLY_TEXT);
+//			}else if(Edit == &edHoatDongMuon){
+//				Scan(Edit, 1, LIMIT_CHARACTER, '0', '1');
+//			}
+//		}
 	}else{
 		ClearStream();
 	}
@@ -432,6 +451,8 @@ void SetMenuSelect(int menuID){
 			RunMuonTra();
 		}else if(menuID == btnThongTin.id){
 			RunThongTin();
+		}else if(menuID == btnThongKe.id){
+			RunThongKe();
 		}
 	}	
 }
@@ -442,7 +463,7 @@ void ButtonEffect(Button &btn){
 	if(btn.isMouseHover(mousex(), mousey())){
 		if(btn.isHover == false){
 			btn.isHover = true;
-			btn.draw();
+			btn.draw(); 	
 		}
 	}else{
 		if(btn.isHover == true){
